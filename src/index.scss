@@ -1,0 +1,57 @@
+@import "variable";
+@import "breakpoints";
+
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.p-text{
+  font-family: "Prompt", sans-serif !important;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #152E1F;
+    @include media-breakpoint-up(lg) {
+      font-size: 24px;
+      line-height: 36px;
+    }
+}
+
+h2{
+  font-family: "Prompt", sans-serif !important;
+  font-weight: bold;
+
+  font-size: 22px;
+  line-height: 26px;
+  color: #0A4626;
+  text-align: center;
+  @include media-breakpoint-up(lg) {
+      text-align: left;
+      font-size: 40px;
+      line-height: 42px;
+  }
+}
+
+.slick-list {
+  margin: 0 -7px !important;
+}
+
+.slick-slide > div {
+  padding: 0 7px !important;
+}
+
+
+
