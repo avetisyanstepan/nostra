@@ -116,6 +116,7 @@ export const Footer = () => {
 const StyledMain = styled.div`
     background: #EEF1E5;
     width: 100%;
+    margin-top: 60px;
 `;
 
 const StyledContainer = styled.div`

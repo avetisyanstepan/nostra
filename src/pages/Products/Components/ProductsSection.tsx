@@ -5,6 +5,7 @@ import ProductsSlide from "./ProductsSlide";
 
 const StyledContainer = styled.div`
   position: relative;
+  z-index: 50;
 `;
 const StyledBgImage = styled.img`
   position: absolute;
@@ -22,6 +23,7 @@ const StyledSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: relative;
 
   @media (max-width: 768px) {
     margin: 20px auto;
@@ -86,9 +88,8 @@ const StyledGreenBackground = styled.div`
   position: absolute;
   right: 0;
   width: 50%;
-  height: 100vh ;
+  height: 740px;
   margin-top: 40px;
-
   @media (max-width: 768px) {
     display: none;
   }
@@ -96,6 +97,7 @@ const StyledGreenBackground = styled.div`
 
 
 const StyledParagraph = styled.h1`
+  max-width: 750px;
   font-size: 32px;
   line-height: 44px;
   color: #0A4626;
@@ -103,6 +105,7 @@ const StyledParagraph = styled.h1`
   font-family: "Prompt", sans-serif !important;
   text-align: center;
   margin-top: 100px;
+  max-width: 744px;
 
   @media (max-width: 768px) {
       font-size: 21px;
@@ -132,6 +135,7 @@ const StyledText = styled.p`
   line-height: 30px;
   font-weight: 300;
   color:#0A4626;
+  font-family: "Prompt", sans-serif !important;
 
 
   @media (max-width: 768px) {
@@ -155,7 +159,7 @@ const StyledDivCol = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 106px;
-  max-width: 347px;
+  max-width: 350px;
 
   @media (max-width: 768px) {
     margin-top: 25px;
@@ -168,7 +172,7 @@ const StyledDivColRight = styled.div`
   flex-direction: column;
   margin-top: 58px;
   align-content: flex-end;
-  margin-right: -350px;
+  margin-right: -280px;
   max-width:417px;
   width: 100%;
 
@@ -181,10 +185,10 @@ const StyledDivColRight = styled.div`
 const StyledBackgroundImage = styled.div`
   background-image: url("./images/group2526.png" );
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   width: 100%;
-  height: 100vh;
+  height: 665px;
   display: flex;
   justify-content: space-around;
   margin-right: 225px;
@@ -198,8 +202,8 @@ const StyledBackgroundImage = styled.div`
 `;
 
 const StyledRightBox = styled.div`
-  margin-top: 160px;
-  margin-left: 100px;
+  margin-top: 100px;
+  margin-left: 20px;
 
   @media (max-width: 768px) {
     margin-top: 25px;
@@ -283,6 +287,7 @@ const ProductsSection = () => {
               </StyledDescription>
             </StyledInfoContainer>
           <ProductsSlide />
+
         </StyledSection>
         
         <StyledGreenBackground />
@@ -297,7 +302,7 @@ const ProductsSection = () => {
                 <StyledDivCol>
                     <StyledText>
                       <StyledTextP>
-                        365 dias de pastagem
+                        365 Dias De Pastagem
                       </StyledTextP>
                         Leite de  
                         <StyledTextBold>

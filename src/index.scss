@@ -24,10 +24,11 @@ code {
   font-size: 16px;
   line-height: 24px;
   color: #152E1F;
-    @include media-breakpoint-up(lg) {
-      font-size: 24px;
-      line-height: 36px;
-    }
+  @include media-breakpoint-up(lg) {
+    font-size: 24px;
+    line-height: 36px;
+
+  }
 }
 
 h2{
@@ -45,13 +46,127 @@ h2{
   }
 }
 
+
 .slick-list {
-  margin: 0 -7px !important;
+  @media (max-width: 768px) {
+   margin: 0 !important;
+  }
 }
 
+.productSlider .slick-list {
+  overflow: visible !important;
+}
 .slick-slide > div {
-  padding: 0 7px !important;
+
+  @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+
+  }
 }
 
 
+
+:root {
+  --tooltip-text-color: #152E1F;
+  --tooltip-background-color: white;
+  --tooltip-margin: 40px;
+  --tooltip-arrow-size: 6px;
+}
+
+/* Wrapping */
+.Tooltip-Wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+
+// @media only screen and (max-width: 768px) {
+//   .Tooltip-Wrapper {
+//     display: none;
+//   }
+// }
+
+/* Absolute positioning */
+.Tooltip-Tip {
+  position: absolute;
+  box-shadow: -1.5px 4px 35px rgba(0, 0, 0, 0.15);
+  width: 250px;
+  border-radius: 12px;
+  left: 50%;
+  transform: translateY(-50%);
+  padding: 16px 13px;
+  opacity: 0.8;
+  color: var(--tooltip-text-color);
+  background: var(--tooltip-background-color);
+  font-size: 12px;
+  line-height: 18px;
+  z-index: 100;
+  white-space: wrap;
+}
+
+/* CSS border triangles */
+.Tooltip-Tip::before {
+  content: " ";
+  left: 50%;
+  border: solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-width: var(--tooltip-arrow-size);
+  margin-left: calc(-1 * var(--tooltip-arrow-size));
+}
+
+/* Absolute positioning */
+.Tooltip-Tip.top {
+  top: calc(-1 * var(--tooltip-margin));
+}
+/* CSS border triangles */
+.Tooltip-Tip.top::before {
+  top: 100%;
+  border-top-color: var(--tooltip-background-color);
+}
+
+/* Absolute positioning */
+.Tooltip-Tip.right {
+  left: calc(100% + var(--tooltip-margin));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+/* CSS border triangles */
+.Tooltip-Tip.right::before {
+  left: calc(-1 * var(--tooltip-arrow-size));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  border-right-color: var(--tooltip-background-color);
+}
+
+
+/* Absolute positioning */
+.Tooltip-Tip.bottom {
+  bottom: calc(-1 * var(--tooltip-margin));
+}
+/* CSS border triangles */
+.Tooltip-Tip.bottom::before {
+  bottom: 100%;
+  border-bottom-color: var(--tooltip-background-color);
+}
+
+/* Absolute positioning */
+.Tooltip-Tip.left {
+  left: auto;
+  right: calc(100% + var(--tooltip-margin));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+}
+/* CSS border triangles */
+.Tooltip-Tip.left::before {
+  left: auto;
+  right: calc(-2 * var(--tooltip-arrow-size));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+  border-left-color: var(--tooltip-background-color);
+}
 

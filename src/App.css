@@ -164,3 +164,25 @@
   border-left-color: var(--tooltip-background-color);
 }
 
+
+
+.custom-carousel-dots-list {
+  position: absolute;
+  display: flex !important;
+  max-width: 416px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  top: -71px;
+  gap: 8px;
+  list-style-type: none;
+  left: 25% !important;
+
+}
+
+.slick-active {
+   color: red !important;
+}
+
+.slick-list  {
+  width: 100% !important;
+}

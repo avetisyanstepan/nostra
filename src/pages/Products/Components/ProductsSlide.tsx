@@ -1,6 +1,5 @@
 import Slider from "react-slick";
 import styled from "styled-components";
-// import { getProducts } from "../../../shared/apis/products";
 import { useHistory } from "react-router-dom";
 import { Arrow, LeftIcon, RightIcon } from "../../../assets/icons";
 import { productsData } from "../../../MOCK";
@@ -18,9 +17,21 @@ const StyledProductCard = styled.div`
   box-shadow: 0px 4px 13px rgba(11, 102, 31, 0.07);
   border-radius: 18px;
   box-sizing: border-box;
-  width: 231px;
-  height: 279px;
+  max-width: 231px;
+  width: 100%;
+  cursor: pointer;
 
+  
+  &:hover img{
+    transform: scale(1.5);
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: 768px) {
+    transform: scale(1.5);
+    margin-bottom: 110px;
+    margin-top: 50px;
+  }
   
 
 
@@ -60,10 +71,12 @@ const SliderContainer = styled.div`
 
 const StyledSlider = styled(Slider)`
   display: flex;
+  display: block;
+  overflow-x: clip;
   justify-content: space-between;
   max-width: 1200px;
   align-items: center;
-  width: 100%
+  width: 100%;
 
 `
 const StyledLinkTo = styled.button`
@@ -98,7 +111,9 @@ const StyledArrowButton = styled.button`
   background: none;
 ` 
 
-
+const StyledDiv = styled.div`
+  width: 100%;
+`
 
 const ProductsSlide = () => {
 
@@ -116,23 +131,29 @@ const ProductsSlide = () => {
     dots: false,
     arrows: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: false,
     speed: 2000,
+    initialSlide: 4,
+    
+
+
     responsive: [
       {
         breakpoint: 1024,
+        
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
+          
         }
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.3,
           slidesToScroll: 1,
 
         }
@@ -141,17 +162,17 @@ const ProductsSlide = () => {
   };
   return (
     <SliderContainer>
-      <StyledSlider ref={(c) => (slider.current = c)} {...settings}>
+      <StyledSlider ref={(c) => (slider.current = c)} {...settings} className="productSlider">
         {
           productsData?.map((product, i) => (
-              <StyledProductCard key={`${i}+${product.name}`}>
+              <StyledProductCard key={`${i}+${product.name}`} onClick={() => history.push(`produtos/${product.linkto}`)}>
                 <StyledImageContainer>
                   <StyledImage src={product.imgUrl} />
                 </StyledImageContainer>
                 <StyledProdctName>
                   {product.name}
                 </StyledProdctName>
-                <StyledLinkTo onClick={() => history.push(`produtos/${product.linkto}`)}>
+                <StyledLinkTo >
                     Descobrir {" "}{" "}
                   <Arrow />
                 </StyledLinkTo>
@@ -159,6 +180,7 @@ const ProductsSlide = () => {
           ))
         }
       </StyledSlider>
+     
       <StyledMobileArrowsContainer>
           <StyledArrowButton>
             <LeftIcon  onClick={previous}/>

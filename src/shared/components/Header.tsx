@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 const MainContainer = styled.div`
   height: 173px;
-  position: fixed;
+  position: absolute;
   z-index:20;
   top:0;
   right:0;
@@ -119,7 +119,7 @@ const Header = () => {
             </StyledNavLink>
            
             <StyledNavLink to='/produtos'>
-              Os nossos Produtos
+              Os Nossos Produtos
             </StyledNavLink>
             <StyledNavLink to='/fazer-o-bem'>
               Fazer o Bem

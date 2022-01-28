@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ReactPlayer from "react-player";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { PlayIcon, RoundedPlusIcon } from "../../../assets/icons";
 import { productInfoData } from "../../../MOCK";
@@ -34,7 +34,7 @@ const StyledDivCol = styled.div`
 const StyledTitle = styled.h1`
     font-family: "Prompt";
     color: #0A4626;
-    font-szie: 32px;ccccc
+    font-size: 32px;
     font-weight: 700;
     line-height: 42px;
 
@@ -43,20 +43,26 @@ const StyledTitle = styled.h1`
         line-height: 32px;
     }
 `;
-const StyledText = styled.p`
+const StyledText = styled.p<any>`
     color: #152E1F;
     font-size: 24px;
     line-height: 36px;
     font-family: "Prompt";
+    white-space: pre-wrap;
 
 
     @media (max-width: 768px) {
         font-szie: 16px;
         line-height: 23px;
+        white-space: no-wrap;
+
+    }
+    @media (min-width: 768px) {
+        padding-right: 50px;
     }
 `;
 
-const StyledLogoContainer = styled.div`
+const StyledLogoContainer = styled.div<any>`
     display: flex;
     flex-direction: column;
     position: relative;
@@ -73,7 +79,7 @@ const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 1160px;
-    margin: 220px auto 53px auto;
+    margin: 220px auto 70px auto;
 
     @media (max-width: 768px) {
         margin-top: 60px;
@@ -113,6 +119,12 @@ const StyledImg = styled.img<any>`
     width: 100%;
     display: flex;
     border-radius: ${props => props.rounded && '100%'};
+    border-radius: ${props => props.rounded === 'biologico' && '0'};
+    background:  ${props => props.rounded === 'biologico' && '#F1F1F1'};
+    padding:  ${props => props.rounded === 'biologico' && '25px 12px 50px 12px'};
+
+
+    
     
 
     @media (max-width: 768px) {
@@ -125,6 +137,7 @@ const StyledImg = styled.img<any>`
     
 `;
 const StyledProductText = styled.span<any>`
+    white-space: pre-wrap;
     font-family: "Poppins", sans-serif !important;
     color: ${props => props.describe ? '#0C6937' : '#152E1F '};
     font-size: ${props => props.describe ? '14px' : '24px'};
@@ -144,16 +157,22 @@ const StyledProductText = styled.span<any>`
       }
 
 `;
-const StyledImgLogo = styled.img`
+const StyledImgLogo = styled.img<any>`
     width: 180px;
     height: 180px;
     position: absolute;
-    left: -29px;
+    left:  ${props => props.bottomRight === 'leite' && '-33px'};
+    left:  ${props => props.bottomRight === 'manteiga' && '-33px'};
+    right:  ${props => props.bottomRight === 'queijo' && '0'};
+    bottom:  ${props => props.bottomRight === 'queijo' && '0'};
+    bottom:  ${props => props.bottomRight === 'manteiga' && '0'};
     z-index: 15;
 
     @media (max-width: 768px) {
         width: 117px;
         height: 117px;
+        left: -29px;
+        top:0;
       }
     
 `;
@@ -162,7 +181,7 @@ const SyledBox = styled.div`
     position: relative;
     height: 633px;
     @media (max-width: 768px) {
-        height: 633px;
+        height: 183px;
     }
 `;
 
@@ -179,7 +198,6 @@ const StyledTextContainer = styled.div`
 `;
 
 const StyledReadMoreBox = styled.div`
-    width: 100%;
     z-index: 10;
 `;
 
@@ -188,8 +206,9 @@ const StyledReadMoreContainer = styled.div`
     width: 100%;
     margin: 0 auto;
     display: flex;
+    gap: 70px;
     flex-direction: row;
-    padding: 36px 0;
+    padding: 44px 0;
     @media (max-width: 768px) {
         flex-direction: column;
         padding: 0 25px;
@@ -205,6 +224,8 @@ const StyledButton = styled.button`
     border: none;
     font-size: 16px;
     font-weight: 700;
+    line-height: 16px;
+    margin-bottom: -26px;
 
     @media (max-width: 768px) {
         padding: 13px 33px;
@@ -224,13 +245,16 @@ interface ParamTypes {
 
 
 export const ProductItem= () => {
+
     const {name} = useParams<ParamTypes>();
-    const product: any = productInfoData.filter((name1) => name1.name === name )
+    const product: any = productInfoData.filter((name1) => name1.name === name );
+    const history = useHistory()
     const [total, setTotal] = useState(256)
     return (
         <StyledMain>
             <StyledContainer>
                 <StyledInfoContainer>
+                   
                     <StyledDivCol>
                         <StyledProductParagraph>
                             {product[0].paragraph}
@@ -239,32 +263,32 @@ export const ProductItem= () => {
                             {product[0].textInfo}
                         </StyledProductText>
 
-                        <StyledProductText describe={"describe"}>
+                        <StyledProductText describe={"describe"} onClick={() => history.push(`/vacas-felizes`)}>
                             {product[0].describeText}
                             <RoundedPlusIcon />
                         </StyledProductText>
                        
                     </StyledDivCol>
-                    <StyledLogoContainer>
-                        <StyledImg  src={product[0].imgProd} rounded={'rounded'}/> 
-                        <StyledImgLogo  src="/images/prodLogoHappy.png" />
+                                   
+                    <StyledLogoContainer bottomRight={product[0].name}>
+                        <StyledImg  src={product[0].imgProd} rounded={product[0].name} /> 
+                        {product[0].name !== 'biologico' && <StyledImgLogo  src="/images/prodLogoHappy.png" bottomRight={product[0].name}/>}
                     </StyledLogoContainer>
                 </StyledInfoContainer>
                 <ProductNutrionFacts  product={product}/> 
                 <SyledBox>
                     {product[0].videoThubnailImage && 
                         <ReactPlayer
-                        // className={'hidden'}
-                        light={product[0].videoThubnailImage}
-                        controls
-                        playing
-                        url={product[0].videoUrl}
-                        width={'100%'}
-                        height={'100%'}
-                        playIcon={
-                            <PlayIcon />
+                            light={product[0].videoThubnailImage}
+                            controls
+                            playing
+                            url={product[0].videoUrl}
+                            width={'100%'}
+                            height={'100%'}
+                            playIcon={
+                                <PlayIcon />
 
-                        }
+                            }
                       />
                     }
                     {
@@ -281,14 +305,12 @@ export const ProductItem= () => {
                         <StyledTitle>
                             {product[0].readMoreTitle}
                         </StyledTitle>
-                        <StyledText>
-                            {product[0].readMoreText.slice(0, total)}
+                        <StyledText max>
+                            {product[0].readMoreText}
                         </StyledText>
-                        {product[0].readMoreText.length !== total &&
-                            <StyledButton onClick={() => setTotal(product[0].readMoreText.length)}>
+                            <StyledButton onClick={() => history.push('/fazer-o-bem')}>
                                 saiba mais
                             </StyledButton>
-                        }
                       
                     </StyledReadMoreBox>
                     <StyledImg lastBg2={'lastBg2'}  src={product[0].readMoreImgUrl}/>

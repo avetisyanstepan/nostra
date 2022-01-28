@@ -36,10 +36,10 @@ const Hero = () => {
         <Row className="align-items-center ">
           <Col className="text-start offset-md-1" md={12}>
             <Styledh1>
-              365 dias de Pastagem
+              365 dias de Pastagem 
             </Styledh1>
             <StyledHeroDescription>
-               Entregamos o melhor da pastagem em produtos <br /> naturalmente cheios de sabor.
+                Entregamos o melhor da pastagem em produtos <br /> naturalmente cheios de sabor.
             </StyledHeroDescription>
           </Col>
         </Row>

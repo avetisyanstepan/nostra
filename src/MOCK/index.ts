@@ -48,17 +48,17 @@ export const productInfoData = [
         product: [
             {
                 name: "Inteiro",
-                // imgUrl: '/images/Pastagem.png'
-                imgUrl: '/images/Margo.png'
+                imgUrl: '/images/leite1.png'
 
-            },
-            {
-                name: "Meio-Gordo",
-                imgUrl: '/images/Margo.png'
             },
             {
                 name: "Magro",
                 imgUrl: '/images/Meio-gordo.png'
+            },
+            {
+                name: "Meio-Gordo",
+                imgUrl: '/images/Margo.png'
+
             },
             {
                 name: "Biológico",
@@ -92,9 +92,9 @@ export const productInfoData = [
         modalNutrionFactsImg: '/images/nurtionFacts1Modal.png',
         backgroundImage: '/images/backg.png',
         readMoreTitle: 'Benefícios do consumo de Leite',
-        readMoreText: 'O leite de vaca é um alimento natural, de elevado valor nutricional, capaz de fornecer um grande número de macro e micronutrientes, considerados essenciais para o bom funcionamento do organismo, tanto no crescimento como na manutenção de um corpo saudável.Dirige o utilizador para a secção “Riqueza nutricional” na página “Fazer o Bem”',
+        readMoreText: 'O leite de vaca é um alimento natural, de elevado valor nutricional, capaz de fornecer um grande número de macro e micronutrientes, considerados essenciais para o bom funcionamento do organismo, tanto no crescimento como na manutenção de um corpo saudável.',
         readMoreImgUrl: '/images/image60.png',
-        modalProductInfo: 'Ingredientes: Leite de vaca não estandardizado ultrapasteurizado.',
+        modalProductInfo: 'Leite de vaca não estandardizado ultrapasteurizado.',
         modalNutrionFactsTitle:["Energia   (kJ / kcal)", "273 kJ / 65 kcal", "682 kJ / 163 kcal"],
         lipidos: ['Lípidos   (g)', "3.6", '9'],
         dosLipidos: ['dos quais saturados   (g)', '2.6', '6.5'],
@@ -117,28 +117,62 @@ export const productInfoData = [
         productName: ['Fatias Light"', 'Fatias Curado', 'Fatias Proteína', 'Bola'],
         product: [
             {
+                name: "Fatias Original",
+                imgUrl: '/images/original.png',
+                type: 'FATIAS',
+
+            },
+            {
                 name: "Fatias Light",
-                imgUrl: '/images/q1.png'
+                imgUrl: '/images/q1.png',
+                type: 'FATIAS',
             },
             {
                 name: "Fatias Curado",
-                imgUrl: '/images/q2.png'
+                imgUrl: '/images/q2.png',
+                type: 'FATIAS',
+
             },
             {
                 name: "Fatias Proteína",
-                imgUrl: '/images/q3.png'
+                imgUrl: '/images/q3.png',
+                type: 'FATIAS',
+
             },
             {
                 name: "Fatias Biológico",
-                imgUrl: '/images/q4.png'
+                imgUrl: '/images/q4.png',
+                type: 'FATIAS',
+
             },
             {
                 name: "Bola",
-                imgUrl: '/images/q5.png'
+                imgUrl: '/images/bola2.png',
+                type: 'BOLA',
+            },
+           
+            {
+                name: "Ralado",
+                imgUrl: '/images/Ralado.png',
+                type: 'RALADO',
+
+            },
+            {
+                name: "Barra",
+                imgUrl: '/images/barra.png',
+                type: 'BARRA',
+
+            },
+            {
+                name: "Barra light",
+                imgUrl: '/images/barraLight.png',
+                type: 'BARRA',
+
             },
 
+
         ],
-        productBuyImgUrl: '/images/Queijo.png',
+        productBuyImgUrl: '/images/original2.png',
         nutrionFacts: [
             {
                 imgUrl: '/images/nutrion3.png',
@@ -147,14 +181,15 @@ export const productInfoData = [
         ],
         nutrionFactsP: 'Queijo de Pastagem Original Fatias',
         nutrionFactsT: 'Um queijo único e cheio de sabor, feito com leite de vacas felizes que vivem ao ar livre e comem erva fresca 365 dias por ano.',
-        nutrionImgUrl: '/images/nutrionImg.png',
+        nutrionImgUrl: '/images/quejoNutrion.png',
         modalBackImg: '/images/MaskGroup.png',
         modalMobileImg: '/images/quejoMobile.png',
         modalNutrionFactsImg: '/images/nurtionFacts1Modal.png',
+        modalProductInfo: 'Leite de vaca pasteurizado, Anti-aglomerante (fibra de aveia), Fermentos lácteos, Coalho, Sal.',
         videoThubnailImage: '/images/image55.png',
-        videoUrl: 'https://www.youtube.com/watch?v=Mpd-bVyu8ng',
+        videoUrl: 'https://www.youtube.com/watch?v=mVQn0tbocRo',
         readMoreTitle: 'Benefícios do consumo de Queijo',
-        readMoreText: 'O queijo flamengo é rico em proteína, um dos nutrientes que nos fornece energia, e que contribui para o crescimento e manutenção da massa muscular. Dirige o utilizador para a secção “Riqueza nutricional” na página “Fazer o Bem”',
+        readMoreText: `O queijo flamengo é rico em proteína, um dos nutrientes que nos fornece energia, e que contribui para o crescimento e manutenção da massa muscular.`,
         readMoreImgUrl: '/images/image67.png'
     },
 
@@ -173,13 +208,20 @@ export const productInfoData = [
            
 
         ],
-        productBuyImgUrl: '/images/Group596.png',
+        productBuyImgUrl: '/images/snack2.png',
         nutrionFacts: [
             {
                 imgUrl: '/images/nutrion3.png',
                 desc: 'Recicle! Proteja a nossa terra. Deposite no ecoponto amarelo.',
             },
         ],
+        tooltip2:  [
+            {
+                imgUrl: '/images/tooltip2Snack.png',
+                desc: 'Embalagem feita com 30% de materiais reciclados.',
+            },
+        ],
+
         nutrionFactsP: 'Snack: Queijo, Nozes e Uvas Passas',
         nutrionFactsT: 'Uma saborosa combinação de queijo, nozes e uvas passas. Um snack sem igual, rico em boa energia. Com 19% de proteína, é um snack equilibrado para levar para o trabalho, escola, ginásio, ou mesmo para consumir em casa. ',
         nutrionImgUrl: '/images/nutrionImg.png',
@@ -187,9 +229,9 @@ export const productInfoData = [
         modalMobileImg: '/images/Snack3mobile.png',
         modalNutrionFactsImg: '/images/nurtionFacts1Modal.png',
         videoThubnailImage: '/images/image45.png',
-        videoUrl: 'https://www.youtube.com/watch?v=Mpd-bVyu8ng',
+        videoUrl: 'https://www.youtube.com/watch?v=dtDyBz4ub_s',
         readMoreTitle: 'Benefícios do consumo de Queijo',
-        readMoreText: 'O queijo flamengo é rico em proteína, um dos nutrientes que nos fornece energia, e que contribui para o crescimento e manutenção da massa muscular. Dirige o utilizador para a secção “Riqueza nutricional” na página “Fazer o Bem”',
+        readMoreText: 'O queijo flamengo é rico em proteína, um dos nutrientes que nos fornece energia, e que contribui para o crescimento e manutenção da massa muscular.',
         readMoreImgUrl: '/images/image63.png'
     },
 
@@ -198,7 +240,7 @@ export const productInfoData = [
         paragraph: "Manteiga",
         textInfo: "Feita com natas de leite de vacas felizes que vivem ao ar livre e comem erva fresca todo o ano. Pura manteiga açoriana, naturalmente cheia de sabor.",
         describeText: 'Descubra o Programa Leite de Vacas Felizes',
-        imgProd: "/images/Mask.png",
+        imgProd: "/images/mantiga.png",
         productImages: ['/images/TN_Leite1.png', '/images/TN_Leite2.png', '/images/TN_Leite3.png', '/images/TN_Leite4.png'],
         productName: ['Inteiro', 'Meio-Gordo', 'Magro', 'Biológico'],
         product: [
@@ -214,18 +256,6 @@ export const productInfoData = [
         productBuyImgUrl: '/images/Manteiga.png',
         nutrionFacts: [
             {
-                imgUrl: '/images/nutrion.png',
-                desc: 'Cartão certificado pela FSC (Forest Stewardship Council) que garante que é proveniente de florestas geridas de forma responsável de modo a preservar a diversidade biológica e assegurar a sua renovação.'
-            },
-            {
-                imgUrl: '/images/nutrion1.png',
-                desc: 'Embalagem feita com 82% do material de origem vegetal. Ao utilizarmos plástico à base de plantas, a pegada de carbono desta embalagem foi reduzida em -19%. Certificada pela Carbon TrustTM.'
-            },
-            {
-                imgUrl: '/images/nutrion2.png',
-                desc: 'Plástico de origem vegetal com certificação Bonsucro, que garante uma produção sustentável da cana-de-açúcar e ambientalmente responsável.'
-            },
-            {
                 imgUrl: '/images/nutrion3.png',
                 desc: 'Recicle! Proteja a nossa terra. Deposite no ecoponto amarelo.',
             },
@@ -236,9 +266,10 @@ export const productInfoData = [
         modalBackImg: '/images/Butter.png',
         modalMobileImg: '/images/Buttermobile.png',
         modalNutrionFactsImg: '/images/nurtionFacts1Modal.png',
+        modalProductInfo: 'Natas pasteurizadas e sal.',
         backgroundImage: '/images/m5.png',
         readMoreTitle: 'Benefícios do consumo de Manteiga',
-        readMoreText: 'O leite de vaca é um alimento natural, de elevado valor nutricional, capaz de fornecer um grande número de macro e micronutrientes, considerados essenciais para o bom funcionamento do organismo, tanto no crescimento como na manutenção de um corpo saudável.Dirige o utilizador para a secção “Riqueza nutricional” na página “Fazer o Bem”',
+        readMoreText: 'A manteiga é um produto simples e natural, feito a partir de leite de vaca e fornece várias vitaminas importantes, como a Vitamina A, D e E. A vitamina A é necessária para a saúde da pele, boca e olhos, para além de ser também importante para o normal funcionamento do sistema imunitário.',
         readMoreImgUrl: '/images/m6.png'
     },
 
@@ -246,9 +277,12 @@ export const productInfoData = [
     {
         name: "biologico",
         paragraph: "Biológico",
-        textInfo: " O nosso queijo e leite de pastagem biológico é exclusivo de vacas felizes que vivem em pastagens biológicas 365 dias por ano. Um método agrícola natural e sustentável, que protege os solos e a biodiversidade. Todos os nossos produtores biológicos são certificados pela A Greener World, garantindo assim as mais elevadas práticas de bem-estar animal em pastagem.",
+        textInfo: `O nosso queijo e leite de pastagem biológico é exclusivo de vacas felizes que vivem em pastagens biológicas 365 dias por ano. Um método agrícola natural e sustentável, que protege os solos e a biodiversidade. 
+
+
+Todos os nossos produtores biológicos são certificados pela A Greener World, garantindo assim as mais elevadas práticas de bem-estar animal em pastagem.`,
         describeText: 'Descubra o Programa Leite de Vacas Felizes',
-        imgProd: "/images/mantega.png",
+        imgProd: "/images/bioProd.png",
         productImages: ['/images/TN_Leite1.png', '/images/TN_Leite2.png', '/images/TN_Leite3.png', '/images/TN_Leite4.png'],
         productName: ['Inteiro', 'Meio-Gordo', 'Magro', 'Biológico'],
         product: [
@@ -286,10 +320,11 @@ export const productInfoData = [
         nutrionImgUrl: '/images/nutrionImg.png',
         modalBackImg: '/images/glassModal.png',
         modalNutrionFactsImg: '/images/nurtionFacts1Modal.png',
+        modalProductInfo: 'Leite de vaca ultrapasteurizado biológico.',
         videoThubnailImage: '/images/bio6.png',
-        videoUrl: 'https://www.youtube.com/watch?v=Mpd-bVyu8ng',
+        videoUrl: 'https://www.youtube.com/watch?v=GajYIsmL2JI',
         readMoreTitle: 'Benefícios do consumo de Leite',
-        readMoreText: 'O leite de vaca é um alimento natural, de elevado valor nutricional, capaz de fornecer um grande número de macro e micronutrientes, considerados essenciais para o bom funcionamento do organismo, tanto no crescimento como na manutenção de um corpo saudável. Dirige o utilizador para a secção “Riqueza nutricional” na página “Fazer o Bem”',
+        readMoreText: `O leite de vaca é um alimento natural, de elevado valor nutricional, capaz de fornecer um grande número de macro e micronutrientes, considerados essenciais para o bom funcionamento do organismo, tanto no crescimento como na manutenção de um corpo saudável. Dirige o utilizador para a secção “Riqueza nutricional” na página “Fazer o Bem”`,
         readMoreImgUrl: '/images/image60.png'
     },
 

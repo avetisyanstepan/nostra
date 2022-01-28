@@ -7,7 +7,7 @@ export { ReactComponent as HappyCowProgramIcon } from "./happy-cow-program-icon.
 export { ReactComponent as LoveToLandIcon } from "./LoveToLand.svg";
 export { ReactComponent as Arrow } from "./arrow.svg";
 export { ReactComponent as ProductLogo } from "./productPageLogo.svg";
-export { ReactComponent as PlusIcon } from "./plus.svg";
+export { ReactComponent as PlusIcon } from "./Plus.svg";
 export { ReactComponent as CloseIcon } from "./CloseIcon.svg";
 export { ReactComponent as DotIcon } from "./b2.svg";
 export { ReactComponent as LogoFooter } from "./footerLogo.svg";
@@ -26,6 +26,9 @@ export { ReactComponent as LeftIcon } from "./left.svg";
 export { ReactComponent as RightIcon } from "./right.svg";
 export { ReactComponent as PlayIcon } from "./play.svg";
 export { ReactComponent as AkarIcon } from "./akarIcon.svg";
+export { ReactComponent as UnionIcon } from "./Union.svg";
+
+
 
 
 
